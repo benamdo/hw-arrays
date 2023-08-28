@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Name Manipulation</title>
+</head>
+<body>
+  <script>
+    const names = [
+      "Emily", "Liam", "Sophia", "Noah", "Olivia",
+      "Ethan", "Ava", "Jackson", "Isabella", "Aiden"
+    ];
+
+    // Add a table to the page
+    document.write("<table>");
+    
+    // Run a forEach loop to add TR along with TD for each name
+    names.forEach(name => {
+      document.write("<tr><td>" + name + "</td></tr>");
+    });
+    
+    document.write("</table>");
+    
+    // Create a new list using filter, containing names with length >= 4
+    const longNames = names.filter(name => name.length >= 4);
+    document.write("<p>Names with 4 letters or more: " + longNames.join(", ") + "</p>");
+    
+    // Create a new list using filter, containing names with length <= 4
+    const shortNames = names.filter(name => name.length <= 4);
+    document.write("<p>Names with 4 letters or less: " + shortNames.join(", ") + "</p>");
+    
+    // Bonus: Concatenate names using forEach loop
+    let concatenatedNames = "";
+    names.forEach(name => {
+      concatenatedNames += name;
+    });
+    document.write("<p>Bonus: Concatenated names: " + concatenatedNames + "</p>");
+    
+    // Create a new list using map, containing word lengths
+    const nameLengths = names.map(name => name.length);
+    document.write("<p>Name lengths: " + nameLengths.join(", ") + "</p>");
+    
+    // Create a new list using map, containing first letters of each word
+    const firstLetters = names.map(name => name[0]);
+    document.write("<p>First letters: " + firstLetters.join(", ") + "</p>");
+    
+    // Create a new list using filter, containing names with the letter 'E'
+    const namesWithE = names.filter(name => name.indexOf("E") !== -1);
+    document.write("<p>Names containing the letter 'E': " + namesWithE.join(", ") + "</p>");
+  </script>
+</body>
+</html>

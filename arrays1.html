@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrays</title>
+</head>
+<body>
+
+    
+
+    <script>
+const list_rnd = [];
+for (let i = 0; i < 10; i++) {
+  list_rnd.push(Math.floor(Math.random() * 7) + 1);
+}
+
+document.write("Generated random numbers: " + list_rnd + "<br>");
+
+document.write("a. Using forEach:<br>");
+list_rnd.forEach(number => {
+  document.write(number + "<br>");
+});
+
+document.write("b. Using for...in loop:<br>");
+for (let number in list_rnd) {
+  document.write(list_rnd[number] + "<br>");
+}
+
+let sum = 0;
+list_rnd.forEach(number => {
+  sum += number;
+});
+document.write("c. Sum of the numbers: " + sum + "<br>");
+
+const smallerThan5 = list_rnd.filter(x => x < 5);
+document.write("d. Numbers smaller than 5: " + smallerThan5 + "<br>");
+
+const squaredNumbers = list_rnd.map(x => x ** 2);
+document.write("e. Squared numbers: " + squaredNumbers + "<br>");
+
+const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const dayNames = list_rnd.map(x => daysOfWeek[x - 1]);
+document.write("f. Day names: " + dayNames + "<br>");
+
+    </script>
+</body>
+</html>
+
